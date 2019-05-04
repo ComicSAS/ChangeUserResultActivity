@@ -84,33 +84,49 @@ public class MainActivity extends AppCompatActivity {
         mBtnSave = findViewById(R.id.btnMainSave);
     }
 
+    private void openName() {
+        Intent intentGetName = new Intent(MainActivity.this, NameActivity.class);
+        startActivityForResult(intentGetName, OPEN_NAME);
+    }
+
+    private void openSurname() {
+        Intent intentGetSurname = new Intent(MainActivity.this, SurnameActivity.class);
+        startActivityForResult(intentGetSurname, OPEN_SURNAME);
+    }
+
+    private void openAge() {
+        Intent intentGetAge = new Intent(MainActivity.this, AgeActivity.class);
+        startActivityForResult(intentGetAge, OPEN_AGE);
+    }
+
+    private void openOther() {
+        Intent intentGetOther = new Intent(MainActivity.this, OtherActivity.class);
+        startActivityForResult(intentGetOther, OPEN_OTHER);
+    }
+
     private void initListeners() {
         onChangeNameAction = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGetName = new Intent(MainActivity.this, NameActivity.class);
-                startActivityForResult(intentGetName, OPEN_NAME);
+                openName();
             }
         };
         onChangeSurnameAction = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGetSurname = new Intent(MainActivity.this, SurnameActivity.class);
-                startActivityForResult(intentGetSurname, OPEN_SURNAME);
+                openSurname();
             }
         };
         onChangeAgeAction = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGetAge = new Intent(MainActivity.this, AgeActivity.class);
-                startActivityForResult(intentGetAge, OPEN_AGE);
+                openAge();
             }
         };
         onChangeOtherAction = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGetOther = new Intent(MainActivity.this, OtherActivity.class);
-                startActivityForResult(intentGetOther, OPEN_OTHER);
+                openOther();
             }
         };
     }
